@@ -1,0 +1,18 @@
+{
+  "eps_zeta": 0.01,
+  "eps_g": 0.01,
+  "default_gamma_n": 0.1,
+  "cases": [
+    {"alpha": 0, "build_time": 1},
+    {"alpha": 1, "build_time": 1},
+    {"alpha": 1, "build_time": 16}
+  ],
+  "financing": ["lump_sum", "labor_tax", "debt"],
+  "sensitivity": {
+    "financing": "debt",
+    "alpha": 1,
+    "build_time": 16,
+    "state": "trap",
+    "gamma_n": [0.05, 0.15, 0.2, 0.25]
+  }
+}

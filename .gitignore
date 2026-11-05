@@ -26,5 +26,8 @@ __pycache__/
 .pytest_cache/
 .venv/
 
+# Run output kept out of git
+results/raw/
+
 # Local working files
 .superpowers/
