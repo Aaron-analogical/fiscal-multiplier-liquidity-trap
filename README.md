@@ -24,7 +24,7 @@ One command reruns the model and rebuilds every table and figure, then checks th
 | Simple model, lump-sum, normal times | 0.89 | 0.90 | Rounding error in the text |
 | Lump-sum break-even investment share | 0.176 | 0.172 | Transcription error in the text |
 
-Full comparison: [results/validation.md](results/validation.md). Other issues found in the original: [docs/errata.md](docs/errata.md).
+Full comparison: [results/validation.md](results/validation.md).
 
 ## Main results
 
@@ -72,7 +72,7 @@ node --test tests/simple_model.test.mjs
 | `results/` | Regenerated tables, figures, validation report |
 | `site/` | Interactive page |
 | `paper/` | English thesis (LaTeX and PDF), French original |
-| `docs/` | Setup, model explainer, errata |
+| `docs/` | Setup and model explainer |
 | `tests/` | Python and JavaScript tests |
 
 ## Skills shown
