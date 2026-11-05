@@ -1,0 +1,5 @@
+,α=0,"α=1, q=1","α=1, q=16"
+impact_normal,0.632,0.749,0.592
+impact_trap,0.975,0.992,1.104
+present_value_normal,0.073,1.162,1.071
+present_value_trap,0.567,1.54,1.81

@@ -1,0 +1,629 @@
+{
+  "status": "mismatch",
+  "dynare_version": "7.2",
+  "compared": 69,
+  "matched": 66,
+  "rows": [
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 impact normal alpha=0 q=1",
+      "thesis": 0.8,
+      "computed": 0.8017065933343774,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 impact normal alpha=1 q=1",
+      "thesis": 0.92,
+      "computed": 0.9185537491471079,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 impact normal alpha=1 q=16",
+      "thesis": 0.76,
+      "computed": 0.76178440299827,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 impact trap alpha=0 q=1",
+      "thesis": 0.93,
+      "computed": 0.9291059898700147,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 impact trap alpha=1 q=1",
+      "thesis": 0.95,
+      "computed": 0.9458081505985475,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 impact trap alpha=1 q=16",
+      "thesis": 1.05,
+      "computed": 1.048773995864619,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 present_value normal alpha=0 q=1",
+      "thesis": 0.8,
+      "computed": 0.8014326090382167,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 present_value normal alpha=1 q=1",
+      "thesis": 1.89,
+      "computed": 1.8914780986493567,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 present_value normal alpha=1 q=16",
+      "thesis": 1.8,
+      "computed": 1.7985120838503499,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 present_value trap alpha=0 q=1",
+      "thesis": 0.93,
+      "computed": 0.9347010403678022,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 present_value trap alpha=1 q=1",
+      "thesis": 1.88,
+      "computed": 1.8768972545521665,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.1",
+      "check": "value",
+      "label": "Table 5.1 present_value trap alpha=1 q=16",
+      "thesis": 2.2,
+      "computed": 2.201473953273711,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 impact normal alpha=0 q=1",
+      "thesis": 0.55,
+      "computed": 0.5511606757998746,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 impact normal alpha=1 q=1",
+      "thesis": 0.67,
+      "computed": 0.6689078579049675,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 impact normal alpha=1 q=16",
+      "thesis": 0.51,
+      "computed": 0.5142678337128171,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 impact trap alpha=0 q=1",
+      "thesis": 0.76,
+      "computed": 0.7628981147671892,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 impact trap alpha=1 q=1",
+      "thesis": 0.75,
+      "computed": 0.7492418549132329,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 impact trap alpha=1 q=16",
+      "thesis": 0.92,
+      "computed": 0.9174248722267513,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 present_value normal alpha=0 q=1",
+      "thesis": 0.54,
+      "computed": 0.5447549044014458,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 present_value normal alpha=1 q=1",
+      "thesis": 1.63,
+      "computed": 1.633588852568765,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 present_value normal alpha=1 q=16",
+      "thesis": 1.55,
+      "computed": 1.545466663969272,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 present_value trap alpha=0 q=1",
+      "thesis": 0.84,
+      "computed": 0.8411826163087583,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 present_value trap alpha=1 q=1",
+      "thesis": 1.76,
+      "computed": 1.7633187771263785,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5.2",
+      "check": "value",
+      "label": "Table 5.2 present_value trap alpha=1 q=16",
+      "thesis": 2.11,
+      "computed": 2.10890289916583,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 impact normal alpha=0 q=1",
+      "thesis": 0.63,
+      "computed": 0.6321961441856154,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 impact normal alpha=1 q=1",
+      "thesis": 0.75,
+      "computed": 0.7494542259778145,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 impact normal alpha=1 q=16",
+      "thesis": 0.58,
+      "computed": 0.5916419514734592,
+      "match": false,
+      "note": "The thesis prints 0.58. This run gives 0.5916, and the original results workbook holds the same 0.5916 in its model output, so 0.58 looks like a copying error in the summary table. No conclusion depends on it."
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 impact trap alpha=0 q=1",
+      "thesis": 0.98,
+      "computed": 0.9751169754673369,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 impact trap alpha=1 q=1",
+      "thesis": 0.99,
+      "computed": 0.991537708736625,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 impact trap alpha=1 q=16",
+      "thesis": 1.1,
+      "computed": 1.1037999231621294,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 present_value normal alpha=0 q=1",
+      "thesis": 0.07,
+      "computed": 0.07312862660845988,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 present_value normal alpha=1 q=1",
+      "thesis": 1.16,
+      "computed": 1.1623309596164653,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 present_value normal alpha=1 q=16",
+      "thesis": 1.07,
+      "computed": 1.0706329475467118,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 present_value trap alpha=0 q=1",
+      "thesis": 0.57,
+      "computed": 0.5668470580824765,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 present_value trap alpha=1 q=1",
+      "thesis": 1.54,
+      "computed": 1.5396948349933017,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.1",
+      "check": "value",
+      "label": "Table 6.1 present_value trap alpha=1 q=16",
+      "thesis": 1.81,
+      "computed": 1.8099131910716855,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 impact gamma_n=0.05",
+      "thesis": 1.05,
+      "computed": 1.0529968746427938,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 present_value gamma_n=0.05",
+      "thesis": 1.65,
+      "computed": 1.6507317376679356,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 impact gamma_n=0.1",
+      "thesis": 1.1,
+      "computed": 1.1037999231621294,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 present_value gamma_n=0.1",
+      "thesis": 1.81,
+      "computed": 1.8099131910716855,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 impact gamma_n=0.15",
+      "thesis": 1.15,
+      "computed": 1.150422390567133,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 present_value gamma_n=0.15",
+      "thesis": 1.96,
+      "computed": 1.9623415435081422,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 impact gamma_n=0.2",
+      "thesis": 1.18,
+      "computed": 1.182805086036901,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 present_value gamma_n=0.2",
+      "thesis": 2.08,
+      "computed": 2.0772959651589677,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 impact gamma_n=0.25",
+      "thesis": 1.2,
+      "computed": 1.1980547756690483,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "6.2",
+      "check": "value",
+      "label": "Table 6.2 present_value gamma_n=0.25",
+      "thesis": 2.15,
+      "computed": 2.149872988060921,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model lump_sum normal alpha=0",
+      "thesis": 0.89,
+      "computed": 0.8975182245915874,
+      "match": false,
+      "note": "The thesis text prints 0.89. The closed-form equation and the original workbook both give 0.8975, which rounds to 0.90."
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model lump_sum normal alpha=1",
+      "thesis": 1.49,
+      "computed": 1.4946474179158074,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model lump_sum trap alpha=0",
+      "thesis": 1.87,
+      "computed": 1.8661887694145773,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model lump_sum trap alpha=1",
+      "thesis": -3.18,
+      "computed": -3.180821775492188,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model labor_tax normal alpha=0",
+      "thesis": 0.66,
+      "computed": 0.6566507138385735,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model labor_tax normal alpha=1",
+      "thesis": 1.25,
+      "computed": 1.2537799071627935,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model labor_tax trap alpha=0",
+      "thesis": 3.9,
+      "computed": 3.902031063321391,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Simple model labor_tax trap alpha=1",
+      "thesis": -1.15,
+      "computed": -1.1449794815853747,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Break-even lump_sum",
+      "thesis": 0.176,
+      "computed": 0.17162412515438458,
+      "match": false,
+      "note": "The thesis text prints 0.176. The closed-form equation and the original workbook both give 0.1716."
+    },
+    {
+      "table": "4.4",
+      "check": "value",
+      "label": "Break-even labor_tax",
+      "thesis": 0.575,
+      "computed": 0.575,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length lump_sum_a0_q1_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length lump_sum_a1_q1_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length lump_sum_a1_q16_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length labor_tax_a0_q1_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length labor_tax_a1_q1_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length labor_tax_a1_q16_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length debt_a0_q1_g10_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length debt_a1_q1_g10_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length debt_a1_q16_g10_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length debt_a1_q16_g5_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length debt_a1_q16_g15_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length debt_a1_q16_g20_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    },
+    {
+      "table": "5",
+      "check": "trap length",
+      "label": "Trap length debt_a1_q16_g25_baseline",
+      "thesis": 12,
+      "computed": 12,
+      "match": true,
+      "note": ""
+    }
+  ]
+}
