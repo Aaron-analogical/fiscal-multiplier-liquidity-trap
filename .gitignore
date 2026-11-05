@@ -1,0 +1,30 @@
+# Dynare and Octave generated files
++*/
+model/*/
+*_results.mat
+*.log
+*.jnl
+*.eps
+*_dynamic.*
+*_static.*
+octave-workspace
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Local working files
+.superpowers/
