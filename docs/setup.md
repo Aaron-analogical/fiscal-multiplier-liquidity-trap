@@ -23,3 +23,12 @@ Run everything:
 ```sh
 .venv/Scripts/python scripts/run_all.py
 ```
+
+## Building the English thesis
+
+The PDF is committed, so this step is optional. It needs a LaTeX engine. [Tectonic](https://tectonic-typesetting.github.io/) 0.17 is standalone and was used here:
+
+```sh
+cd paper
+tectonic thesis_en.tex
+```

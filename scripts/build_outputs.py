@@ -16,6 +16,7 @@ ROOT = Path(__file__).parents[1]
 RAW = ROOT / "results" / "raw"
 TABLES = ROOT / "results" / "tables"
 FIGURES = ROOT / "results" / "figures"
+PAPER_FIGURES = ROOT / "paper" / "figures"
 BLUE, ORANGE = "#2a78d6", "#eb6834"
 RAMP = ["#86b6ef", "#5598e7", "#2a78d6", "#1c5cab", "#0d366b"]
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e6e5e0"
@@ -70,8 +71,12 @@ def write_tables() -> None:
     pd.DataFrame(rows).round(3).to_csv(TABLES / "table_6_2.csv", index=False)
 
 
-def save(fig, name: str) -> None:
+def save(fig, name: str, title: str) -> None:
+    """Save a titled PNG for the repo and an untitled PDF for the thesis."""
     FIGURES.mkdir(parents=True, exist_ok=True)
+    PAPER_FIGURES.mkdir(parents=True, exist_ok=True)
+    fig.savefig(PAPER_FIGURES / f"{name}.pdf", bbox_inches="tight")
+    fig.suptitle(title, x=0.07, ha="left", fontsize=11)
     fig.savefig(FIGURES / f"{name}.png", bbox_inches="tight", facecolor="white")
     plt.close(fig)
 
@@ -91,10 +96,9 @@ def simple_figure(financing: str, number: str) -> None:
     ax.axhline(0, color=MUTED, linewidth=0.8)
     ax.set_xlabel("Share of public spending going to investment, α (%)")
     ax.set_ylabel("Multiplier")
-    ax.set_title(f"Figure {number}: multiplier by investment share, "
-                 f"{LABELS[financing]} financing", loc="left", fontsize=10)
     ax.legend(frameon=False)
-    save(fig, f"figure_{number.replace('.', '_')}")
+    save(fig, f"figure_{number.replace('.', '_')}",
+         f"Figure {number}: multiplier by investment share, {LABELS[financing]} financing")
 
 
 def real_rate(run: pd.DataFrame) -> pd.Series:
@@ -128,10 +132,10 @@ def impulse_figure(number, financing, alpha, build) -> None:
     for ax in axes[1]:
         ax.set_xlabel("Quarters")
     case = f"α={alpha}" if alpha == 0 else f"α={alpha}, q={build}"
-    fig.suptitle(f"Figure {number}: response to a spending shock, {case}, "
-                 f"{LABELS[financing]} financing", x=0.07, ha="left", fontsize=11)
     fig.tight_layout()
-    save(fig, f"figure_{number.replace('.', '_')}")
+    save(fig, f"figure_{number.replace('.', '_')}",
+         f"Figure {number}: response to a spending shock, {case}, "
+         f"{LABELS[financing]} financing")
 
 
 def tax_path_figure() -> None:
@@ -141,10 +145,9 @@ def tax_path_figure() -> None:
         ax.plot(run.t, 100 * run.tau, color=color, label=f"γₙ = {gamma / 100:g}")
     ax.set_xlabel("Quarters")
     ax.set_ylabel("Labor tax rate (%)")
-    ax.set_title("Figure 6.1: labor tax path in a liquidity trap, by tax response to debt",
-                 loc="left", fontsize=10)
     ax.legend(frameon=False)
-    save(fig, "figure_6_1")
+    save(fig, "figure_6_1", "Figure 6.1: labor tax path in a liquidity trap, "
+         "by tax response to debt")
 
 
 def headline_figure() -> None:
@@ -167,9 +170,7 @@ def headline_figure() -> None:
     ax.set_axisbelow(True)
     ax.set_ylim(0, 4.5)
     ax.legend(frameon=False)
-    ax.set_title("In a liquidity trap, the better way to finance spending flips",
-                 loc="left", fontsize=11)
-    save(fig, "headline")
+    save(fig, "headline", "In a liquidity trap, the better way to finance spending flips")
 
 
 def build_all() -> None:
