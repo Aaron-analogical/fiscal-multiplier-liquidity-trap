@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How financing changes the fiscal multiplier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>How financing changes the fiscal multiplier</h1>
+    <p class="lede">A government spends one more dollar during a slump. How much does GDP rise? This page lets you explore the answer from my M.Sc. thesis (HEC Montr&eacute;al, 2023), which compares paying with a lump-sum tax, a labor tax, or debt, in normal times and when interest rates are stuck at zero (a liquidity trap).</p>
+    <p class="links"><a href="https://github.com/Aaron-analogical/fiscal-multiplier-liquidity-trap">Code and thesis on GitHub</a></p>
+  </header>
+
+  <main>
+    <section aria-labelledby="simple-title">
+      <h2 id="simple-title">1. Simple model: live calculation</h2>
+      <p>This version has a formula for the multiplier, so your browser computes it as you move the sliders. Its assumption: the tax ends the moment the trap ends.</p>
+      <div class="controls" id="simple-controls">
+        <fieldset class="toggle">
+          <legend>Financing</legend>
+          <label><input type="radio" name="simple-financing" value="lump_sum" checked> Lump-sum tax</label>
+          <label><input type="radio" name="simple-financing" value="labor_tax"> Labor tax</label>
+        </fieldset>
+        <label class="slider">Share spent on investment: <output id="alpha-out"></output>
+          <input id="alpha" type="range" min="0" max="1" step="0.01" value="0">
+        </label>
+        <label class="slider">Trap persistence: <output id="p-out"></output>
+          <input id="p" type="range" min="0.5" max="0.9" step="0.01" value="0.8">
+        </label>
+        <label class="slider">Price flexibility: <output id="kappa-out"></output>
+          <input id="kappa" type="range" min="0.01" max="0.06" step="0.005" value="0.03">
+        </label>
+      </div>
+      <div class="tiles">
+        <div class="tile"><span class="tile-label">Normal times</span><span class="tile-value" id="simple-normal"></span></div>
+        <div class="tile"><span class="tile-label">Liquidity trap</span><span class="tile-value" id="simple-trap"></span></div>
+      </div>
+      <p class="caption" id="simple-caption" aria-live="polite"></p>
+      <div class="chart"><canvas id="simple-chart" role="img" aria-label="Multiplier by investment share, normal times and liquidity trap"></canvas></div>
+    </section>
+
+    <section aria-labelledby="full-title">
+      <h2 id="full-title">2. Full dynamic model: thesis results</h2>
+      <p>This version drops the shortcut: the trap ends on its own and the tax can linger after it. That reverses the ranking under a balanced budget. These results come from model runs (Dynare), not live calculation.</p>
+      <div class="controls" id="full-controls">
+        <label class="select">Financing
+          <select id="financing">
+            <option value="lump_sum">Lump-sum tax</option>
+            <option value="labor_tax">Labor tax</option>
+            <option value="debt">Debt, repaid by labor tax</option>
+          </select>
+        </label>
+        <label class="select">Spending mix
+          <select id="mix">
+            <option value="0-1">Consumption only</option>
+            <option value="1-1">Investment, 1 quarter to build</option>
+            <option value="1-16">Investment, 16 quarters to build</option>
+          </select>
+        </label>
+        <label class="select" id="gamma-field">Tax response to debt
+          <select id="gamma">
+            <option value="0.05">0.05</option>
+            <option value="0.1" selected>0.1</option>
+            <option value="0.15">0.15</option>
+            <option value="0.2">0.2</option>
+            <option value="0.25">0.25</option>
+          </select>
+        </label>
+      </div>
+      <p class="message" id="load-error" role="alert" hidden>The model results could not be loaded. Reload the page, or see the tables in the repository.</p>
+      <div id="full-results">
+        <div class="tiles">
+          <div class="tile"><span class="tile-label">Normal times, total effect</span><span class="tile-value" id="full-normal"></span></div>
+          <div class="tile"><span class="tile-label">Liquidity trap, total effect</span><span class="tile-value" id="full-trap"></span></div>
+        </div>
+        <p class="caption" id="full-caption" aria-live="polite"></p>
+        <div class="chart"><canvas id="full-chart" role="img" aria-label="GDP response over 50 quarters, normal times and liquidity trap"></canvas></div>
+        <details>
+          <summary>Show as a table</summary>
+          <table>
+            <thead><tr><th scope="col">Measure</th><th scope="col">Normal times</th><th scope="col">Liquidity trap</th></tr></thead>
+            <tbody id="full-table"></tbody>
+          </table>
+        </details>
+      </div>
+      <p class="note">All values here are thesis scenarios, recomputed with free tools. Total effect means the present-value multiplier over 500 quarters.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Aaron Israel. Supervisor: Hafedh Bouakez.</p>
+  </footer>
+
+  <script src="vendor/chart.umd.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

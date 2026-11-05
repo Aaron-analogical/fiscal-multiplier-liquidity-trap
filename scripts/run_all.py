@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 from build_outputs import build_all
+from build_site_data import build_site_data
 from solve import CONFIG, MODEL, RAW, ROOT, solve
 from validate import validate, write_report
 
@@ -16,6 +17,7 @@ def main() -> int:
         print(f"Validation refused: {report['reason']}", file=sys.stderr)
         return 1
     build_all()
+    build_site_data()
     print(f"{report['status']}: {report['matched']} of {report['compared']} "
           "checks agree. See results/validation.md")
     return 0

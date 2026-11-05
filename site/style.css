@@ -1,0 +1,65 @@
+[hidden] { display: none !important; }
+
+:root {
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --muted: #52514e;
+  --line: #e6e5e0;
+  --blue: #2a78d6;
+  --orange: #eb6834;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 2rem 1.25rem 3rem;
+  background: var(--surface);
+  color: var(--ink);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 0.75rem; }
+h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+a { color: var(--blue); }
+section { padding-top: 2rem; margin-top: 2rem; border-top: 1px solid var(--line); }
+.lede { color: var(--muted); }
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 1rem 0;
+}
+
+fieldset { border: 0; margin: 0; padding: 0; }
+legend { padding: 0; font-weight: 500; }
+.toggle label { display: block; }
+.slider, .select { display: block; font-weight: 500; }
+.slider input, .select select { display: block; width: 100%; margin-top: 0.35rem; }
+.select select { padding: 0.45rem; font: inherit; font-weight: 400; background: #fff; border: 1px solid #bdbcb5; border-radius: 6px; }
+output { font-weight: 400; color: var(--muted); }
+
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
+.tile { padding: 0.8rem 1rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.tile-label { display: block; color: var(--muted); font-size: 0.875rem; }
+.tile-value { display: block; font-size: 1.9rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.tile-value.empty { font-size: 1rem; font-weight: 400; padding: 0.6rem 0 0.55rem; color: var(--muted); }
+
+.caption { margin: 0.75rem 0; }
+.note { color: var(--muted); font-size: 0.875rem; }
+.message { padding: 0.75rem 1rem; border: 1px solid #d03b3b; border-radius: 6px; }
+.chart { position: relative; height: 300px; margin-top: 1rem; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+th, td { padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--line); text-align: right; font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child { text-align: left; }
+details { margin-top: 1rem; }
+footer { margin-top: 3rem; color: var(--muted); font-size: 0.875rem; }
+
+@media (max-width: 560px) {
+  h1 { font-size: 1.55rem; }
+  .controls { grid-template-columns: 1fr; }
+  .tile-value { font-size: 1.55rem; }
+}
