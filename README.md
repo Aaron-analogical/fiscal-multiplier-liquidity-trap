@@ -8,7 +8,7 @@ Yes, and the answer depends on how long the tax lasts. A simple model says a lab
 
 *Multiplier in a liquidity trap when all spending is consumption. Simple model: closed-form result. Full model: present value over 500 quarters.*
 
-**[Try the interactive page](https://aaron-analogical.github.io/fiscal-multiplier-liquidity-trap/)** | **[Read the thesis in English](paper/thesis_en.pdf)** | [French original](paper/thesis_fr.pdf)
+**[Try the interactive page](https://aaron-analogical.github.io/fiscal-multiplier-liquidity-trap/)** | **[Read the thesis in English](paper/thesis_en.pdf)** | [Version française corrigée](paper/thesis_fr_corrected.pdf) | [As deposited at HEC Montréal](paper/thesis_fr.pdf)
 
 This is my M.Sc. thesis in Applied Economics (HEC Montréal, 2023), supervised by Hafedh Bouakez, rebuilt as a reproducible project.
 
@@ -16,7 +16,7 @@ This is my M.Sc. thesis in Applied Economics (HEC Montréal, 2023), supervised b
 
 One command reruns the model and rebuilds every table and figure, then checks them against the numbers printed in the thesis. The thesis used MATLAB; this repo uses free tools.
 
-**66 of 69 checks are within 0.005 of the value printed in the thesis.** The other three are printing errors in the French thesis, confirmed by the original results workbooks. None affects a conclusion, and the English version corrects them:
+**66 of 69 checks are within 0.005 of the value printed in the thesis.** The other three are printing errors in the French thesis, confirmed by the original results workbooks. None affects a conclusion, and the corrected English and French versions fix them:
 
 | Value | French thesis | Rerun | Likely cause |
 |---|---|---|---|
@@ -71,7 +71,7 @@ node --test tests/simple_model.test.mjs
 | `scripts/` | Multipliers, tables, figures, validation, site data |
 | `results/` | Regenerated tables, figures, validation report |
 | `site/` | Interactive page |
-| `paper/` | English thesis (LaTeX and PDF), French original |
+| `paper/` | Corrected English and French theses (LaTeX and PDF), thesis as deposited |
 | `docs/` | Setup and model explainer |
 | `tests/` | Python and JavaScript tests |
 
@@ -81,4 +81,4 @@ Macroeconomic modeling (DSGE, occasionally binding constraints), numerical solut
 
 ## Licence
 
-Code: [MIT](LICENSE). Thesis text and PDFs: [CC BY-NC-ND 4.0](paper/LICENSE). The English version is an unofficial, corrected translation; the French thesis is the official version.
+Code: [MIT](LICENSE). Thesis text and PDFs: [CC BY-NC-ND 4.0](paper/LICENSE). The English and corrected French versions are unofficial; the thesis deposited at HEC Montréal is the official version.

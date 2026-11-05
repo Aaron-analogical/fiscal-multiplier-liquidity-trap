@@ -31,4 +31,5 @@ The PDF is committed, so this step is optional. It needs a LaTeX engine. [Tecton
 ```sh
 cd paper
 tectonic thesis_en.tex
+tectonic thesis_fr_corrected.tex
 ```

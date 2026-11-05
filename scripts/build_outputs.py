@@ -6,6 +6,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+from matplotlib.ticker import FuncFormatter  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
@@ -17,6 +18,7 @@ RAW = ROOT / "results" / "raw"
 TABLES = ROOT / "results" / "tables"
 FIGURES = ROOT / "results" / "figures"
 PAPER_FIGURES = ROOT / "paper" / "figures"
+PAPER_FIGURES_FR = ROOT / "paper" / "figures_fr"
 BLUE, ORANGE = "#2a78d6", "#eb6834"
 RAMP = ["#86b6ef", "#5598e7", "#2a78d6", "#1c5cab", "#0d366b"]
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e6e5e0"
@@ -24,6 +26,26 @@ HORIZON = 51
 CASES = [(0, 1), (1, 1), (1, 16)]
 CASE_LABELS = ["α=0", "α=1, q=1", "α=1, q=16"]
 LABELS = {"lump_sum": "lump-sum tax", "labor_tax": "labor tax", "debt": "debt"}
+
+TEXT = {
+    "en": {
+        "normal": "Normal times", "trap": "Liquidity trap", "multiplier": "Multiplier",
+        "share": "Share of public spending going to investment, α (%)",
+        "quarters": "Quarters", "gdp": "GDP", "gdp_unit": "% of steady state",
+        "real": "Real interest rate", "real_unit": "percentage points, annual",
+        "nominal": "Nominal interest rate", "nominal_unit": "%, annual",
+        "tax": "Labor tax rate", "tax_axis": "Labor tax rate (%)",
+    },
+    "fr": {
+        "normal": "Temps normal", "trap": "Trappe à liquidité", "multiplier": "Multiplicateur",
+        "share": "Fraction des dépenses publiques en investissement, α (%)",
+        "quarters": "Trimestres", "gdp": "PIB",
+        "gdp_unit": "déviation en % de l'état stationnaire",
+        "real": "Taux d'intérêt réel", "real_unit": "points de pourcentage, annuel",
+        "nominal": "Taux d'intérêt nominal", "nominal_unit": "%, annuel",
+        "tax": "Taux de taxe sur le travail", "tax_axis": "Taux de taxe sur le travail (%)",
+    },
+}
 
 plt.rcParams.update({
     "font.family": "DejaVu Sans", "font.size": 10, "axes.edgecolor": MUTED,
@@ -71,8 +93,17 @@ def write_tables() -> None:
     pd.DataFrame(rows).round(3).to_csv(TABLES / "table_6_2.csv", index=False)
 
 
-def save(fig, name: str, title: str) -> None:
+def save(fig, name: str, title: str, lang: str = "en") -> None:
     """Save a titled PNG for the repo and an untitled PDF for the thesis."""
+    if lang == "fr":
+        PAPER_FIGURES_FR.mkdir(parents=True, exist_ok=True)
+        for ax in fig.axes:
+            ax.yaxis.set_major_formatter(
+                FuncFormatter(lambda value, _: f"{value:g}".replace(".", ",")))
+        fig.savefig(PAPER_FIGURES_FR / f"{name}.pdf", bbox_inches="tight",
+                    metadata={"CreationDate": None})
+        plt.close(fig)
+        return
     FIGURES.mkdir(parents=True, exist_ok=True)
     PAPER_FIGURES.mkdir(parents=True, exist_ok=True)
     fig.savefig(PAPER_FIGURES / f"{name}.pdf", bbox_inches="tight",
@@ -87,19 +118,21 @@ def label_line(ax, x, y, text) -> None:
                 color=INK, va="center", fontsize=9)
 
 
-def simple_figure(financing: str, number: str) -> None:
+def simple_figure(financing: str, number: str, lang: str = "en") -> None:
+    text = TEXT[lang]
     alphas = np.linspace(0, 1, 101)
     fig, ax = plt.subplots(figsize=(7, 3.8))
-    for state, color, name in [("normal", BLUE, "Normal times"),
-                               ("trap", ORANGE, "Liquidity trap")]:
+    for state, color, name in [("normal", BLUE, text["normal"]),
+                               ("trap", ORANGE, text["trap"])]:
         values = [multiplier(a, financing, state) for a in alphas]
         ax.plot(alphas * 100, values, color=color, label=name)
     ax.axhline(0, color=MUTED, linewidth=0.8)
-    ax.set_xlabel("Share of public spending going to investment, α (%)")
-    ax.set_ylabel("Multiplier")
+    ax.set_xlabel(text["share"])
+    ax.set_ylabel(text["multiplier"])
     ax.legend(frameon=False)
     save(fig, f"figure_{number.replace('.', '_')}",
-         f"Figure {number}: multiplier by investment share, {LABELS[financing]} financing")
+         f"Figure {number}: multiplier by investment share, {LABELS[financing]} financing",
+         lang)
 
 
 def real_rate(run: pd.DataFrame) -> pd.Series:
@@ -107,48 +140,50 @@ def real_rate(run: pd.DataFrame) -> pd.Series:
     return run.ii - run.pie
 
 
-def impulse_figure(number, financing, alpha, build) -> None:
+def impulse_figure(number, financing, alpha, build, lang="en") -> None:
+    text = TEXT[lang]
     name = stem(financing, alpha, build)
     normal = load(f"{name}_normal").head(HORIZON)
     trap = load(f"{name}_trap").head(HORIZON)
     base = load(f"{name}_baseline").head(HORIZON)
     panels = [
-        ("GDP", "% of steady state",
+        (text["gdp"], text["gdp_unit"],
          100 * (normal.y - normal.y_ss) / normal.y_ss, 100 * (trap.y - base.y) / trap.y_ss),
-        ("Real interest rate", "percentage points, annual",
+        (text["real"], text["real_unit"],
          400 * (real_rate(normal) - RB), 400 * (real_rate(trap) - real_rate(base))),
-        ("Nominal interest rate", "%, annual", 400 * normal.ii, 400 * trap.ii),
+        (text["nominal"], text["nominal_unit"], 400 * normal.ii, 400 * trap.ii),
     ]
     if financing != "lump_sum":
-        panels.append(("Labor tax rate", "%", 100 * normal.tau, 100 * trap.tau))
+        panels.append((text["tax"], "%", 100 * normal.tau, 100 * trap.tau))
     fig, axes = plt.subplots(2, 2, figsize=(9, 6), sharex=True)
     for ax, (title, unit, first, second) in zip(axes.flat, panels):
-        ax.plot(normal.t, first, color=BLUE, label="Normal times")
-        ax.plot(trap.t, second, color=ORANGE, label="Liquidity trap")
+        ax.plot(normal.t, first, color=BLUE, label=text["normal"])
+        ax.plot(trap.t, second, color=ORANGE, label=text["trap"])
         ax.set_title(title, loc="left", fontsize=10)
         ax.set_ylabel(unit)
     axes.flat[0].legend(frameon=False)
     for ax in axes.flat[len(panels):]:
         ax.set_visible(False)
     for ax in axes[1]:
-        ax.set_xlabel("Quarters")
+        ax.set_xlabel(text["quarters"])
     case = f"α={alpha}" if alpha == 0 else f"α={alpha}, q={build}"
     fig.tight_layout()
     save(fig, f"figure_{number.replace('.', '_')}",
          f"Figure {number}: response to a spending shock, {case}, "
-         f"{LABELS[financing]} financing")
+         f"{LABELS[financing]} financing", lang)
 
 
-def tax_path_figure() -> None:
+def tax_path_figure(lang: str = "en") -> None:
+    text = TEXT[lang]
     fig, ax = plt.subplots(figsize=(7, 3.8))
     for color, gamma in zip(RAMP, (5, 10, 15, 20, 25)):
         run = load(f"debt_a1_q16_g{gamma}_trap").head(HORIZON)
         ax.plot(run.t, 100 * run.tau, color=color, label=f"γₙ = {gamma / 100:g}")
-    ax.set_xlabel("Quarters")
-    ax.set_ylabel("Labor tax rate (%)")
+    ax.set_xlabel(text["quarters"])
+    ax.set_ylabel(text["tax_axis"])
     ax.legend(frameon=False)
     save(fig, "figure_6_1", "Figure 6.1: labor tax path in a liquidity trap, "
-         "by tax response to debt")
+         "by tax response to debt", lang)
 
 
 def headline_figure() -> None:
@@ -176,15 +211,16 @@ def headline_figure() -> None:
 
 def build_all() -> None:
     write_tables()
-    simple_figure("lump_sum", "4.1")
-    simple_figure("labor_tax", "4.2")
-    for number, financing, alpha, build in [
-        ("5.1", "lump_sum", 0, 1), ("5.2", "labor_tax", 0, 1),
-        ("5.3", "lump_sum", 1, 1), ("5.4", "labor_tax", 1, 1),
-        ("5.5", "lump_sum", 1, 16), ("5.6", "labor_tax", 1, 16),
-    ]:
-        impulse_figure(number, financing, alpha, build)
-    tax_path_figure()
+    for lang in TEXT:
+        simple_figure("lump_sum", "4.1", lang)
+        simple_figure("labor_tax", "4.2", lang)
+        for number, financing, alpha, build in [
+            ("5.1", "lump_sum", 0, 1), ("5.2", "labor_tax", 0, 1),
+            ("5.3", "lump_sum", 1, 1), ("5.4", "labor_tax", 1, 1),
+            ("5.5", "lump_sum", 1, 16), ("5.6", "labor_tax", 1, 16),
+        ]:
+            impulse_figure(number, financing, alpha, build, lang)
+        tax_path_figure(lang)
     headline_figure()
 
 

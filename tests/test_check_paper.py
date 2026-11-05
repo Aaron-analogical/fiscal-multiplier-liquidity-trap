@@ -38,3 +38,29 @@ def test_english_thesis_carries_the_corrections():
         assert wrong not in tex, wrong
     assert "Larocque and M. Normandin (2018)" in tex
     assert "corrects errors" in tex
+
+
+PAPER = Path(__file__).parents[1] / "paper"
+
+
+def test_corrected_french_carries_the_corrections():
+    tex = (PAPER / "thesis_fr_corrected.tex").read_text(encoding="utf-8")
+    for wrong in ("0,176", "{0,58}", "Theta_r", "Frisch", "Calvo", "New Deal de 1930"):
+        assert wrong not in tex, wrong
+    assert "Version corrigée" in tex
+    assert "reste la version officielle" in tex
+    assert "M. Normandin (2018)" in tex
+
+
+def test_corrected_french_has_the_same_numbers_as_english():
+    def numbers(*names):
+        return extract_numbers("\n".join((PAPER / n).read_text(encoding="utf-8") for n in names))
+
+    french = numbers("thesis_fr_corrected.tex", "annex_b_nodebt_fr.mod", "annex_b_debt_fr.mod")
+    english = numbers("thesis_en.tex", "annex_b_nodebt.mod", "annex_b_debt.mod")
+    assert compare(french, english) == {"only_french": [], "only_english": []}
+
+
+def test_french_figures_exist_for_every_english_figure():
+    english = {p.name for p in (PAPER / "figures").glob("figure_*.pdf")}
+    assert english == {p.name for p in (PAPER / "figures_fr").glob("figure_*.pdf")}
