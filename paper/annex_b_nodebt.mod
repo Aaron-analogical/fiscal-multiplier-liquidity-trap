@@ -102,7 +102,7 @@ mc = (Theta-1)/Theta + PSI/Theta*pie*(1+pie)
 mc = w/y_n;
 
 //capital accumulation (7)
-k = (1-delta)*k(-1) + gi;
+k = (1-delta)*k(-1) + gi(-1);
 
 //public investment spending (8)
 gi = gi_ss + alpha*(g-g_ss);

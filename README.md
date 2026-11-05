@@ -16,9 +16,9 @@ This is my M.Sc. thesis in Applied Economics (HEC Montréal, 2023), supervised b
 
 One command reruns the model and rebuilds every table and figure, then checks them against the numbers printed in the thesis. The thesis used MATLAB; this repo uses free tools.
 
-**66 of 69 checks are within 0.005 of the value printed in the thesis.** The other three are printing errors in the thesis, confirmed by the original results workbooks, and none affects a conclusion:
+**66 of 69 checks are within 0.005 of the value printed in the thesis.** The other three are printing errors in the French thesis, confirmed by the original results workbooks. None affects a conclusion, and the English version corrects them:
 
-| Value | Thesis | Rerun | Likely cause |
+| Value | French thesis | Rerun | Likely cause |
 |---|---|---|---|
 | Table 6.1, debt, normal times, 16-quarter build | 0.58 | 0.59 | Copying error in a summary table |
 | Simple model, lump-sum, normal times | 0.89 | 0.90 | Rounding error in the text |
@@ -81,4 +81,4 @@ Macroeconomic modeling (DSGE, occasionally binding constraints), numerical solut
 
 ## Licence
 
-Code: [MIT](LICENSE). Thesis text and PDFs: [CC BY-NC-ND 4.0](paper/LICENSE). The English version is an unofficial translation; the French thesis is the official version.
+Code: [MIT](LICENSE). Thesis text and PDFs: [CC BY-NC-ND 4.0](paper/LICENSE). The English version is an unofficial, corrected translation; the French thesis is the official version.
