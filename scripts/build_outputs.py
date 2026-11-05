@@ -75,7 +75,8 @@ def save(fig, name: str, title: str) -> None:
     """Save a titled PNG for the repo and an untitled PDF for the thesis."""
     FIGURES.mkdir(parents=True, exist_ok=True)
     PAPER_FIGURES.mkdir(parents=True, exist_ok=True)
-    fig.savefig(PAPER_FIGURES / f"{name}.pdf", bbox_inches="tight")
+    fig.savefig(PAPER_FIGURES / f"{name}.pdf", bbox_inches="tight",
+                metadata={"CreationDate": None})
     fig.suptitle(title, x=0.07, ha="left", fontsize=11)
     fig.savefig(FIGURES / f"{name}.png", bbox_inches="tight", facecolor="white")
     plt.close(fig)
