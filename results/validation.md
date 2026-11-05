@@ -1,6 +1,6 @@
 # Validation report
 
-Status: mismatch. 66 of 69 checks agree with the thesis at its printed precision, using Dynare 7.2 under GNU Octave.
+Status: mismatch. 66 of 69 checks are within 0.005 of the value printed in the thesis (0.0005 for the three-decimal break-evens), using Dynare 7.2 under GNU Octave.
 
 ## Differences
 

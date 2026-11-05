@@ -49,7 +49,7 @@ const simpleChart = lineChart($("simple-chart"), "Share spent on investment (%)"
 
 function simpleCaption(normal, trap, financing, duration) {
   if (trap === null) {
-    return `With a trap this long (about ${duration} quarters), deflation and falling demand feed on each other in this linear model, so it gives no usable number. Move trap persistence down.`;
+    return `With a trap of about ${duration} quarters at these settings, deflation and falling demand feed on each other in this linear model, so it gives no usable number. Move trap persistence or price flexibility down.`;
   }
   const other = financing === "lump_sum" ? "labor_tax" : "lump_sum";
   const alpha = Number($("alpha").value);

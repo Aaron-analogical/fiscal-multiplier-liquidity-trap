@@ -16,7 +16,7 @@ This is my M.Sc. thesis in Applied Economics (HEC Montréal, 2023), supervised b
 
 One command reruns the model and rebuilds every table and figure, then checks them against the numbers printed in the thesis. The thesis used MATLAB; this repo uses free tools.
 
-**66 of 69 checks agree at the thesis's printed precision.** The other three are printing errors in the thesis, confirmed by the original results workbooks, and none affects a conclusion:
+**66 of 69 checks are within 0.005 of the value printed in the thesis.** The other three are printing errors in the thesis, confirmed by the original results workbooks, and none affects a conclusion:
 
 | Value | Thesis | Rerun | Likely cause |
 |---|---|---|---|

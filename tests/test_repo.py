@@ -29,3 +29,16 @@ def test_readme_reports_validation_truthfully():
     assert f"{report['matched']} of {report['compared']}" in readme
     if report["status"] != "pass":
         assert "results/validation.md" in readme
+
+
+def test_precision_claim_is_stated_exactly():
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    report = (ROOT / "results" / "validation.md").read_text(encoding="utf-8")
+    assert "printed precision" not in readme + report
+    assert "within 0.005" in readme
+    assert "within 0.005" in report
+
+
+def test_page_labels_settings_beyond_the_thesis():
+    page = (ROOT / "site" / "index.html").read_text(encoding="utf-8")
+    assert "go beyond the thesis" in page

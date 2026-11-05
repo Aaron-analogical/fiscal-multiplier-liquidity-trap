@@ -7,7 +7,8 @@ export const CALIBRATION = {
   delta: 1, phi_r: 1,
 };
 
-const MIN_TRAP_DENOMINATOR = 0.02;
+const MIN_TRAP_DENOMINATOR = 0.1;
+const MAX_MEANINGFUL_MULTIPLIER = 10;
 const THETA_TAU = { lump_sum: 0, labor_tax: 1 };
 
 export function multiplier(alpha, financing, state, params = CALIBRATION) {
@@ -31,7 +32,8 @@ export function multiplier(alpha, financing, state, params = CALIBRATION) {
     const psi = ((1 - p) * (1 - x.beta * p)) / (x.kappa * p);
     const denominator = psi - 1 - weight * thetaG;
     if (denominator < MIN_TRAP_DENOMINATOR) return null;
-    return (psi - 1 - weight * invest) / denominator;
+    const value = (psi - 1 - weight * invest) / denominator;
+    return Math.abs(value) <= MAX_MEANINGFUL_MULTIPLIER ? value : null;
   }
   throw new Error(`Unknown state: ${state}`);
 }

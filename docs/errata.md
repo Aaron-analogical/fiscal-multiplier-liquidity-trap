@@ -28,12 +28,15 @@ Each item needs Aaron's ruling before publication: keep as printed, or correct i
 | Annex A | F/C = Y/C = a/(1−g) | Identity (1) gives 1/(1−ḡ). |
 | Annex A | N formula | The printed formula has (θ−1)/θ where the code has θ/(θ−1). |
 | Annex A | C exponent b/(1−b) | The code uses 1/(1−b). |
+| Annex A | K = ᾱg/(1−g)·C | Drops the 1/δ in the line above it. The code keeps it, and C inherits the error. |
+| Eq. (51) to (53) | ρ in the trap formulas | The trap's persistence is p. The results are the same because ρ = p = 0.8. The page's persistence slider uses p. |
 
 ## Cross-references and wording
 
 | Where | As printed | Issue |
 |---|---|---|
 | Section 3 | Bouakez et al. (2017) cited twice for different shocks | The second citation should be 2020. |
+| Section 4.2 | "substituting (35) into (34)" | (35) only defines Φr. The combination is (33) with (34). |
 | Section 3.1 | "subject to constraint (4)" | Should be constraint (5). |
 | Section 3.2 | "production function (11)", "demand function (10)" | Should be (10) and (9). |
 | Section 4.4 | γ = 0.29 called "Frisch elasticity of labor" | γ is a preference parameter, as Table 4.1 says. |
@@ -41,6 +44,7 @@ Each item needs Aaron's ruling before publication: keep as printed, or correct i
 | Tables 5.1, 5.2 | Title says present-value multipliers | They also report impact multipliers. |
 | Tables 6.1, 6.2, Figure 6.1 | Numbered 6.x | They sit in section 5. |
 | Section 1 | "New Deal de 1930" | The New Deal began in 1933. |
+| Section 2.2.1, Bibliography | Bouakez, Larocque and Normandin (2018) | Cited in the text but missing from the bibliography. |
 | Bibliography | Calvo (1983), Fischer (1977), and others | These listed references are not cited in the text. |
 
 ## Code listing

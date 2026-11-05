@@ -128,8 +128,9 @@ def write_report(report: dict, out_dir) -> None:
     else:
         lines += [
             f"Status: {report['status']}. {report['matched']} of "
-            f"{report['compared']} checks agree with the thesis at its printed "
-            f"precision, using Dynare {report['dynare_version']} under GNU Octave.",
+            f"{report['compared']} checks are within 0.005 of the value printed in "
+            f"the thesis (0.0005 for the three-decimal break-evens), using Dynare "
+            f"{report['dynare_version']} under GNU Octave.",
             "",
         ]
         different = [r for r in report["rows"] if not r["match"]]

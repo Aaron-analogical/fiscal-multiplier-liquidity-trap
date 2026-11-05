@@ -52,3 +52,19 @@ def test_normal_times_ignores_trap_persistence():
 def test_unknown_financing_is_rejected():
     with pytest.raises(ValueError):
         multiplier(0, "debt", "normal")
+
+
+@pytest.mark.parametrize("financing,alpha", [("lump_sum", 1), ("labor_tax", 0)])
+def test_near_singular_slider_position_returns_none(financing, alpha):
+    params = {**CALIBRATION, "p": 0.82}
+    assert multiplier(alpha, financing, "trap", params) is None
+
+
+def test_no_slider_position_gives_a_huge_multiplier():
+    for p_step in range(50, 91):
+        for kappa_step in range(2, 13):
+            params = {**CALIBRATION, "p": p_step / 100, "kappa": kappa_step * 0.005}
+            for alpha_step in range(0, 101):
+                for financing in ("lump_sum", "labor_tax"):
+                    value = multiplier(alpha_step / 100, financing, "trap", params)
+                    assert value is None or abs(value) <= 10
