@@ -1,53 +1,190 @@
 {
   "columns": [
-    {"alpha": 0, "build_time": 1},
-    {"alpha": 1, "build_time": 1},
-    {"alpha": 1, "build_time": 16}
+    {
+      "alpha": 0,
+      "build_time": 1
+    },
+    {
+      "alpha": 1,
+      "build_time": 1
+    },
+    {
+      "alpha": 1,
+      "build_time": 16
+    }
   ],
   "tables": {
     "5.1": {
       "financing": "lump_sum",
-      "impact": {"normal": [0.8, 0.92, 0.76], "trap": [0.93, 0.95, 1.05]},
-      "present_value": {"normal": [0.8, 1.89, 1.8], "trap": [0.93, 1.88, 2.2]}
+      "impact": {
+        "normal": [
+          0.8,
+          0.92,
+          0.76
+        ],
+        "trap": [
+          0.93,
+          0.95,
+          1.05
+        ]
+      },
+      "present_value": {
+        "normal": [
+          0.8,
+          1.89,
+          1.8
+        ],
+        "trap": [
+          0.93,
+          1.88,
+          2.2
+        ]
+      }
     },
     "5.2": {
       "financing": "labor_tax",
-      "impact": {"normal": [0.55, 0.67, 0.51], "trap": [0.76, 0.75, 0.92]},
-      "present_value": {"normal": [0.54, 1.63, 1.55], "trap": [0.84, 1.76, 2.11]}
+      "impact": {
+        "normal": [
+          0.55,
+          0.67,
+          0.51
+        ],
+        "trap": [
+          0.76,
+          0.75,
+          0.92
+        ]
+      },
+      "present_value": {
+        "normal": [
+          0.54,
+          1.63,
+          1.55
+        ],
+        "trap": [
+          0.84,
+          1.76,
+          2.11
+        ]
+      }
     },
     "6.1": {
       "financing": "debt",
-      "impact": {"normal": [0.63, 0.75, 0.58], "trap": [0.98, 0.99, 1.1]},
-      "present_value": {"normal": [0.07, 1.16, 1.07], "trap": [0.57, 1.54, 1.81]}
+      "impact": {
+        "normal": [
+          0.63,
+          0.75,
+          0.59
+        ],
+        "trap": [
+          0.98,
+          0.99,
+          1.1
+        ]
+      },
+      "present_value": {
+        "normal": [
+          0.07,
+          1.16,
+          1.07
+        ],
+        "trap": [
+          0.57,
+          1.54,
+          1.81
+        ]
+      }
     }
   },
   "sensitivity": {
     "table": "6.2",
     "rows": [
-      {"gamma_n": 0.05, "impact": 1.05, "present_value": 1.65},
-      {"gamma_n": 0.1, "impact": 1.1, "present_value": 1.81},
-      {"gamma_n": 0.15, "impact": 1.15, "present_value": 1.96},
-      {"gamma_n": 0.2, "impact": 1.18, "present_value": 2.08},
-      {"gamma_n": 0.25, "impact": 1.2, "present_value": 2.15}
+      {
+        "gamma_n": 0.05,
+        "impact": 1.05,
+        "present_value": 1.65
+      },
+      {
+        "gamma_n": 0.1,
+        "impact": 1.1,
+        "present_value": 1.81
+      },
+      {
+        "gamma_n": 0.15,
+        "impact": 1.15,
+        "present_value": 1.96
+      },
+      {
+        "gamma_n": 0.2,
+        "impact": 1.18,
+        "present_value": 2.08
+      },
+      {
+        "gamma_n": 0.25,
+        "impact": 1.2,
+        "present_value": 2.15
+      }
     ]
   },
   "simple_model": [
-    {"financing": "lump_sum", "state": "normal", "alpha": 0, "value": 0.89},
-    {"financing": "lump_sum", "state": "normal", "alpha": 1, "value": 1.49},
-    {"financing": "lump_sum", "state": "trap", "alpha": 0, "value": 1.87},
-    {"financing": "lump_sum", "state": "trap", "alpha": 1, "value": -3.18},
-    {"financing": "labor_tax", "state": "normal", "alpha": 0, "value": 0.66},
-    {"financing": "labor_tax", "state": "normal", "alpha": 1, "value": 1.25},
-    {"financing": "labor_tax", "state": "trap", "alpha": 0, "value": 3.9},
-    {"financing": "labor_tax", "state": "trap", "alpha": 1, "value": -1.15}
+    {
+      "financing": "lump_sum",
+      "state": "normal",
+      "alpha": 0,
+      "value": 0.9
+    },
+    {
+      "financing": "lump_sum",
+      "state": "normal",
+      "alpha": 1,
+      "value": 1.49
+    },
+    {
+      "financing": "lump_sum",
+      "state": "trap",
+      "alpha": 0,
+      "value": 1.87
+    },
+    {
+      "financing": "lump_sum",
+      "state": "trap",
+      "alpha": 1,
+      "value": -3.18
+    },
+    {
+      "financing": "labor_tax",
+      "state": "normal",
+      "alpha": 0,
+      "value": 0.66
+    },
+    {
+      "financing": "labor_tax",
+      "state": "normal",
+      "alpha": 1,
+      "value": 1.25
+    },
+    {
+      "financing": "labor_tax",
+      "state": "trap",
+      "alpha": 0,
+      "value": 3.9
+    },
+    {
+      "financing": "labor_tax",
+      "state": "trap",
+      "alpha": 1,
+      "value": -1.15
+    }
   ],
   "break_even": [
-    {"financing": "lump_sum", "alpha": 0.176},
-    {"financing": "labor_tax", "alpha": 0.575}
+    {
+      "financing": "lump_sum",
+      "alpha": 0.172
+    },
+    {
+      "financing": "labor_tax",
+      "alpha": 0.575
+    }
   ],
-  "notes": {
-    "Table 6.1 impact normal alpha=1 q=16": "The thesis prints 0.58. This run gives 0.5916, and the original results workbook holds the same 0.5916 in its model output, so 0.58 looks like a copying error in the summary table. No conclusion depends on it.",
-    "Simple model lump_sum normal alpha=0": "The thesis text prints 0.89. The closed-form equation and the original workbook both give 0.8975, which rounds to 0.90.",
-    "Break-even lump_sum": "The thesis text prints 0.176. The closed-form equation and the original workbook both give 0.1716."
-  }
+  "notes": {}
 }

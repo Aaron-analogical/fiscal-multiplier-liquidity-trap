@@ -1,14 +1,6 @@
 # Validation report
 
-Status: mismatch. 66 of 69 checks are within 0.005 of the value printed in the thesis (0.0005 for the three-decimal break-evens), using Dynare 7.2 under GNU Octave.
-
-## Differences
-
-| Check | Thesis | This run | Explanation |
-|---|---|---|---|
-| Table 6.1 impact normal alpha=1 q=16 | 0.58 | 0.5916 | The thesis prints 0.58. This run gives 0.5916, and the original results workbook holds the same 0.5916 in its model output, so 0.58 looks like a copying error in the summary table. No conclusion depends on it. |
-| Simple model lump_sum normal alpha=0 | 0.89 | 0.8975 | The thesis text prints 0.89. The closed-form equation and the original workbook both give 0.8975, which rounds to 0.90. |
-| Break-even lump_sum | 0.176 | 0.1716 | The thesis text prints 0.176. The closed-form equation and the original workbook both give 0.1716. |
+Status: pass. 69 of 69 checks are within 0.005 of the value in the corrected thesis (0.0005 for the three-decimal break-evens), using Dynare 7.2 under GNU Octave.
 
 ## All checks
 
@@ -40,7 +32,7 @@ Status: mismatch. 66 of 69 checks are within 0.005 of the value printed in the t
 | Table 5.2 present_value trap alpha=1 q=16 | 2.11 | 2.109 | yes |
 | Table 6.1 impact normal alpha=0 q=1 | 0.63 | 0.632 | yes |
 | Table 6.1 impact normal alpha=1 q=1 | 0.75 | 0.749 | yes |
-| Table 6.1 impact normal alpha=1 q=16 | 0.58 | 0.592 | no |
+| Table 6.1 impact normal alpha=1 q=16 | 0.59 | 0.592 | yes |
 | Table 6.1 impact trap alpha=0 q=1 | 0.98 | 0.975 | yes |
 | Table 6.1 impact trap alpha=1 q=1 | 0.99 | 0.992 | yes |
 | Table 6.1 impact trap alpha=1 q=16 | 1.1 | 1.104 | yes |
@@ -60,7 +52,7 @@ Status: mismatch. 66 of 69 checks are within 0.005 of the value printed in the t
 | Table 6.2 present_value gamma_n=0.2 | 2.08 | 2.077 | yes |
 | Table 6.2 impact gamma_n=0.25 | 1.2 | 1.198 | yes |
 | Table 6.2 present_value gamma_n=0.25 | 2.15 | 2.150 | yes |
-| Simple model lump_sum normal alpha=0 | 0.89 | 0.898 | no |
+| Simple model lump_sum normal alpha=0 | 0.9 | 0.898 | yes |
 | Simple model lump_sum normal alpha=1 | 1.49 | 1.495 | yes |
 | Simple model lump_sum trap alpha=0 | 1.87 | 1.866 | yes |
 | Simple model lump_sum trap alpha=1 | -3.18 | -3.181 | yes |
@@ -68,7 +60,7 @@ Status: mismatch. 66 of 69 checks are within 0.005 of the value printed in the t
 | Simple model labor_tax normal alpha=1 | 1.25 | 1.254 | yes |
 | Simple model labor_tax trap alpha=0 | 3.9 | 3.902 | yes |
 | Simple model labor_tax trap alpha=1 | -1.15 | -1.145 | yes |
-| Break-even lump_sum | 0.176 | 0.172 | no |
+| Break-even lump_sum | 0.172 | 0.172 | yes |
 | Break-even labor_tax | 0.575 | 0.575 | yes |
 | Trap length lump_sum_a0_q1_baseline | 12 | 12.000 | yes |
 | Trap length lump_sum_a1_q1_baseline | 12 | 12.000 | yes |

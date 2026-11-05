@@ -7,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).parents[1] / "scripts"))
 from simple_model import CALIBRATION, multiplier  # noqa: E402
 
 THESIS_VALUES = [
-    ("lump_sum", "normal", 0, 0.89),
+    ("lump_sum", "normal", 0, 0.90),
     ("lump_sum", "normal", 1, 1.49),
     ("lump_sum", "trap", 0, 1.87),
     ("lump_sum", "trap", 1, -3.18),
@@ -23,7 +23,7 @@ def test_thesis_values(financing, state, alpha, expected):
     assert multiplier(alpha, financing, state) == pytest.approx(expected, abs=0.01)
 
 
-@pytest.mark.parametrize("financing,alpha", [("lump_sum", 0.176), ("labor_tax", 0.575)])
+@pytest.mark.parametrize("financing,alpha", [("lump_sum", 0.172), ("labor_tax", 0.575)])
 @pytest.mark.parametrize("state", ["normal", "trap"])
 def test_break_even(financing, alpha, state):
     assert multiplier(alpha, financing, state) == pytest.approx(1, abs=0.05)

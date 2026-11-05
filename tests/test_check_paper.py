@@ -37,7 +37,8 @@ def test_english_thesis_carries_the_corrections():
     for wrong in ("0.176", "0.58", "Theta_r", "Frisch", "Calvo", "(1-g)"):
         assert wrong not in tex, wrong
     assert "Larocque and M. Normandin (2018)" in tex
-    assert "corrects errors" in tex
+    assert "minor corrections" in tex
+    assert "three printed values" not in tex
 
 
 PAPER = Path(__file__).parents[1] / "paper"

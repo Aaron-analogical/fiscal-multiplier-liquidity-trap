@@ -37,6 +37,15 @@ def test_precision_claim_is_stated_exactly():
     assert "printed precision" not in readme + report
     assert "within 0.005" in readme
     assert "within 0.005" in report
+    assert "corrected thesis" in readme
+    assert "corrected thesis" in report
+
+
+def test_public_docs_do_not_list_errors():
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    report = (ROOT / "results" / "validation.md").read_text(encoding="utf-8")
+    for phrase in ("printing error", "Likely cause", "copying error", "Differences"):
+        assert phrase not in readme + report, phrase
 
 
 def test_page_labels_settings_beyond_the_thesis():

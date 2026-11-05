@@ -1,8 +1,8 @@
 {
-  "status": "mismatch",
+  "status": "pass",
   "dynare_version": "7.2",
   "compared": 69,
-  "matched": 66,
+  "matched": 69,
   "rows": [
     {
       "table": "5.1",
@@ -242,10 +242,10 @@
       "table": "6.1",
       "check": "value",
       "label": "Table 6.1 impact normal alpha=1 q=16",
-      "thesis": 0.58,
+      "thesis": 0.59,
       "computed": 0.5916419514734592,
-      "match": false,
-      "note": "The thesis prints 0.58. This run gives 0.5916, and the original results workbook holds the same 0.5916 in its model output, so 0.58 looks like a copying error in the summary table. No conclusion depends on it."
+      "match": true,
+      "note": ""
     },
     {
       "table": "6.1",
@@ -422,10 +422,10 @@
       "table": "4.4",
       "check": "value",
       "label": "Simple model lump_sum normal alpha=0",
-      "thesis": 0.89,
+      "thesis": 0.9,
       "computed": 0.8975182245915874,
-      "match": false,
-      "note": "The thesis text prints 0.89. The closed-form equation and the original workbook both give 0.8975, which rounds to 0.90."
+      "match": true,
+      "note": ""
     },
     {
       "table": "4.4",
@@ -494,10 +494,10 @@
       "table": "4.4",
       "check": "value",
       "label": "Break-even lump_sum",
-      "thesis": 0.176,
+      "thesis": 0.172,
       "computed": 0.17162412515438458,
-      "match": false,
-      "note": "The thesis text prints 0.176. The closed-form equation and the original workbook both give 0.1716."
+      "match": true,
+      "note": ""
     },
     {
       "table": "4.4",

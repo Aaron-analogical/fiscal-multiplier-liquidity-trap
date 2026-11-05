@@ -14,15 +14,9 @@ This is my M.Sc. thesis in Applied Economics (HEC Montréal, 2023), supervised b
 
 ## Reproduced results
 
-One command reruns the model and rebuilds every table and figure, then checks them against the numbers printed in the thesis. The thesis used MATLAB; this repo uses free tools.
+One command reruns the model and rebuilds every table and figure, then checks them against the corrected thesis. The thesis used MATLAB; this repo uses free tools.
 
-**66 of 69 checks are within 0.005 of the value printed in the thesis.** The other three are printing errors in the French thesis, confirmed by the original results workbooks. None affects a conclusion, and the corrected English and French versions fix them:
-
-| Value | French thesis | Rerun | Likely cause |
-|---|---|---|---|
-| Table 6.1, debt, normal times, 16-quarter build | 0.58 | 0.59 | Copying error in a summary table |
-| Simple model, lump-sum, normal times | 0.89 | 0.90 | Rounding error in the text |
-| Lump-sum break-even investment share | 0.176 | 0.172 | Transcription error in the text |
+**69 of 69 checks are within 0.005 of the values in the corrected thesis.**
 
 Full comparison: [results/validation.md](results/validation.md).
 

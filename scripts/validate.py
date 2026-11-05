@@ -1,4 +1,4 @@
-"""Compare regenerated results with the numbers printed in the thesis."""
+"""Compare regenerated results with the numbers in the corrected thesis."""
 import json
 from pathlib import Path
 
@@ -15,7 +15,7 @@ MEASURES = {"impact": impact_multiplier, "present_value": present_value_multipli
 
 
 def matches(computed: float, thesis: float, tolerance: float = PRINTED_ROUNDING) -> bool:
-    """True when both agree at the precision printed in the thesis."""
+    """True when both agree at the precision used in the thesis."""
     return abs(computed - thesis) <= tolerance
 
 
@@ -128,8 +128,8 @@ def write_report(report: dict, out_dir) -> None:
     else:
         lines += [
             f"Status: {report['status']}. {report['matched']} of "
-            f"{report['compared']} checks are within 0.005 of the value printed in "
-            f"the thesis (0.0005 for the three-decimal break-evens), using Dynare "
+            f"{report['compared']} checks are within 0.005 of the value in the "
+            f"corrected thesis (0.0005 for the three-decimal break-evens), using Dynare "
             f"{report['dynare_version']} under GNU Octave.",
             "",
         ]
